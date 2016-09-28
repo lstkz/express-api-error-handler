@@ -1,6 +1,6 @@
 {
   "name": "express-api-error-handler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Error handler for express APIs",
   "main": "dist/index.js",
   "scripts": {
