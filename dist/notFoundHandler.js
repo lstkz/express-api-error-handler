@@ -25,7 +25,10 @@ function notFoundHandler() {
       log({ req: req, res: res });
     }
     res.status(_httpStatus2.default.NOT_FOUND);
-    res.json({ error: 'route not found' });
+    res.json({
+      status: _httpStatus2.default.NOT_FOUND,
+      error: 'route not found'
+    });
   };
 }
 

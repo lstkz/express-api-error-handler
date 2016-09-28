@@ -22,7 +22,7 @@ function errorHandler() {
 
   return function errorHandlerMiddleware(err, req, res, next) {
     // eslint-disable-line no-unused-vars
-    var status = err.httpStatus || _httpStatus2.default.INTERNAL_SERVER_ERROR;
+    var status = err.statusCode || _httpStatus2.default.INTERNAL_SERVER_ERROR;
     if (err.isJoi) {
       status = _httpStatus2.default.BAD_REQUEST;
     }
