@@ -61,20 +61,20 @@ app.listen(PORT);
 ### Errors from http-errors
 `GET http://localhost:3000/error`
 
-Response:
+Response:  
 ![Alt text](https://monosnap.com/file/49YQ2fEfJ05IBYpSmJ9xyQf39aqDyn.png)
 
-Console log:
+Console log:  
 ![Alt text](https://monosnap.com/file/CtxlOukGp46qmws2CZDi2nweyPTGIP.png)
 
 
 ### Errors from Joi
-`GET http://localhost:3000/error`
+`GET http://localhost:3000/joi`
 
-Response:
+Response:  
 ![Alt text](https://monosnap.com/file/gfHDcaUAwhmgVUv16K2EeWtntqE5Ku.png)
 
-Console log:
+Console log:  
 ![Alt text](https://monosnap.com/file/DKCwjwksgNlX6W34IY8ArlPdpvQPe5.png)
 
 
@@ -82,10 +82,10 @@ Console log:
 
 `GET http://localhost:3000/foobar`
 
-Response:
+Response:  
 ![Alt text](https://monosnap.com/file/C4ivCvdCylIEYKktDTd1KWEKZhFISR.png)
 
-Console log:
+Console log:  
 ![Alt text](https://monosnap.com/file/bpLLHHwH9a0n9QVzwg6q9MJwMjhcpq.png)
 
 
