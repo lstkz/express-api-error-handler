@@ -2,7 +2,7 @@
   "name": "express-api-error-handler",
   "version": "1.0.0",
   "description": "Error handler for express APIs",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "example": "babel-node examples/example.js | bunyan -o short",
     "build": "babel src --out-dir dist",
