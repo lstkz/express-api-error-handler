@@ -16,9 +16,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * @returns {Function} the express middleware
  */
 function notFoundHandler() {
-  var _ref = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-  var log = _ref.log;
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      log = _ref.log;
 
   return function notFoundHandlerMiddleware(req, res) {
     if (log) {

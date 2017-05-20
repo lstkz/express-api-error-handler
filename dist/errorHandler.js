@@ -13,12 +13,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Create an express handler middleware for error handling
  * @param {Function} [log] the function to log the occurred error
+ * @param {Boolean} [hideProdError] hide the message from 5xx errors in prod mode
  * @returns {Function} the express error middleware
  */
 function errorHandler() {
-  var _ref = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-
-  var log = _ref.log;
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      log = _ref.log,
+      hideProdErrors = _ref.hideProdErrors;
 
   return function errorHandlerMiddleware(err, req, res, next) {
     // eslint-disable-line no-unused-vars
@@ -39,6 +40,9 @@ function errorHandler() {
     }
     if (process.env.NODE_ENV !== 'production') {
       body.stack = err.stack;
+    }
+    if (hideProdErrors && process.env.NODE_ENV === 'production' && status >= _httpStatus2.default.INTERNAL_SERVER_ERROR) {
+      body.error = _httpStatus2.default[status];
     }
     if (log) {
       log({ err: err, req: req, res: res, body: body });
