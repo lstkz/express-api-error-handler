@@ -44,6 +44,7 @@ app.use(errorHandler({
   log: ({ err, req, res, body }) => {
     logger.error(err, `${body.status} ${req.method} ${req.url}`);
   },
+  hideProdErrors: true, // hide 5xx errors if NODE_ENV is "production" (default: false)
 }));
 
 app.use(notFoundHandler({
@@ -107,6 +108,11 @@ errorHandler({
   log: ({ err, req, res, body }) => {
     ...
   },
+
+  /**
+  * Hides 5xx errors if NODE_ENV is "production" (default: false)
+  */
+  hideProdErrors: true/false,
 })
 ```
 #### Not found handler

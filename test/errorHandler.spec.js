@@ -116,5 +116,22 @@ describe('errorHandler', () => {
         .expect(HTTPStatus.INTERNAL_SERVER_ERROR);
       expect(body).to.not.have.property('stack');
     });
+
+    it('should replace 5xx messages if hideProdErrors is true', async() => {
+      _createApp({ hideProdErrors: true });
+      const { body } = await request(_app)
+        .get('/internal')
+        .expect(HTTPStatus.INTERNAL_SERVER_ERROR);
+      expect(body).to.have.property('error').and.equal('Internal Server Error');
+    });
+
+    it('should not replace non-5xx messages if hideProdErrors is true', async() => {
+      _createApp({ hideProdErrors: true });
+      const { body } = await request(_app)
+        .get('/http-error')
+        .expect(HTTPStatus.NOT_FOUND);
+      expect(body).to.have.property('error').and.equal('Object not found');
+      expect(body).to.have.property('status').and.equal(HTTPStatus.NOT_FOUND);
+    });
   });
 });
