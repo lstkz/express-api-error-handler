@@ -1,6 +1,6 @@
 # express-api-error-handler
 [![Build Status](https://travis-ci.org/lsentkiewicz/express-api-error-handler.svg?branch=master)](https://travis-ci.org/lsentkiewicz/express-api-error-handler)
-[![codecov](https://codecov.io/gh/lsentkiewicz/express-api-error-handler/branch/master/graph/badge.svg)](https://codecov.io/gh/lsentkiewicz/express-api-error-handler)
+[![codecov](https://codecov.io/gh/lsentkiewicz/express-api-error-handler/branch/master/graph/badge.svg)](https://codecov.io/gh/lsentkiewicz/express-api-error-handler) [![Greenkeeper badge](https://badges.greenkeeper.io/BetterCallSky/express-api-error-handler.svg)](https://greenkeeper.io/)
 
 express-api-error-handler is a simple library for error handling in express apps
 It's compatible with [joi](https://www.npmjs.com/package/joi) and [http-errors](https://www.npmjs.com/package/http-errors);
